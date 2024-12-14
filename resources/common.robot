@@ -2,6 +2,8 @@
 Library  SeleniumLibrary
 
 *** Variables ***
+${BROWSER} =    chrome
+${START_URL} =  https://qa-challenge.ensolvers.com/login
 
 *** Keywords ***
 Begin Web Test 0
