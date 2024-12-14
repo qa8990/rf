@@ -1,8 +1,8 @@
 *** Settings ***
 Documentation  Suite for QA Ensolvers Challenge
 Library     SeleniumLibrary
-Resource  ./resources/common.robot  # necessary for Setup & Teardown
-Resource  ./resources/locators/login.py      # locators for Login page
+Resource  ../resources/common.robot  # necessary for Setup & Teardown
+Resource  ../resources/locators/login.py      # locators for Login page
 
 Suite Setup     Begin Web Test 0 
 #Test Setup      LandingPage.Load Website
