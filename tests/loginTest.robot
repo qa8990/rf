@@ -4,7 +4,7 @@ Library     SeleniumLibrary
 Resource  ../resources/common.robot  # necessary for Setup & Teardown
 Variables  ../resources/locators/login.py      # locators for Login page
 
-Suite Setup     Begin Web Test
+Suite Setup     Begin Web Test 0
 #Test Setup      LandingPage.Load Website
 #Test Teardown   LandingPage.Goto LandingPage
 Suite Teardown  End Web Test
