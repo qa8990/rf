@@ -28,8 +28,10 @@ jobs:
       run: |
         sudo apt-get update
         sudo apt-get install -y wget unzip
-        wget -q "https://storage.googleapis.com/chrome-for-testing-public/131.0.6778.108/linux64/chrome-linux64.zip"
+        wget -q "https://storage.googleapis.com/chrome-for-testing-public/131.0.6778.108/linux64/chrome-linux64.zip" 
+        wget -q "https://storage.googleapis.com/chrome-for-testing-public/131.0.6778.108/win64/chrome-win64.zip"
         unzip chrome-linux64.zip
+        unzip chrome-win64.zip
         ls -l
         rm chrome-linux64.zip
       
