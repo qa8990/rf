@@ -28,27 +28,23 @@ jobs:
         ls -l /usr/bin/
         ls -l /usr/bin/google-chrome
         
-    - name: Install Google Chrome
+    - name: Set up Chrome and Chromedriver
       run: |
-        sudo apt-get update
-        sudo apt-get install -y wget unzip
-        wget -q "https://storage.googleapis.com/chrome-for-testing-public/131.0.6778.108/linux64/chrome-linux64.zip" 
-        wget -q "https://storage.googleapis.com/chrome-for-testing-public/131.0.6778.108/win64/chrome-win64.zip"
-        unzip chrome-linux64.zip
-        unzip chrome-win64.zip
-        ls -l
-        rm chrome-linux64.zip
-      
-    - name: Install Compatible ChromeDriver
+        pip install webdrivermanager 
+
+    - name: Set up Chrome 
+      uses: browser-actions/setup-chrome@v1
+      with:
+          chrome-version: 121.0.6167 # This is the version of Google Chrome that was used
+
+    - name: Run Robot Framework Tests
       run: |
-        sudo apt-get install -y wget unzip
-        wget -q "https://storage.googleapis.com/chrome-for-testing-public/131.0.6778.108/linux64/chromedriver-linux64.zip"
-        unzip chromedriver-linux64.zip
-        ls -l
-        rm chromedriver-linux64.zip
-        sudo mv chrome-linux64 /usr/local/bin/
-        sudo mv chromedriver-linux64 /usr/local/bin/
+          chrome --version
+          webdrivermanager --version
+          mkdir -p results  # Create a directory to store 
+          pip list >> results/lista.txt
+          ls -l >> results/directorio.txt
 
     - name: Test with robotframework
       run: |
-        robot -d results/concise tests/loginTest.robot
+        robot -v --outputdir results tests/loginTest.robot
