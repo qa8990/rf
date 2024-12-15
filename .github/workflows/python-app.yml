@@ -25,7 +25,8 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
         pip install webdriver-manager 
-        ls -l /usr/local/bin/
+        ls -l /usr/bin/
+        ls -l /usr/bin/google-chrome
         
     - name: Install Google Chrome
       run: |
