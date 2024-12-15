@@ -13,7 +13,7 @@ Begin Web Test 0
     Call Method    ${chrome_options}   add_argument    disable-dev-shm-usage
     ${options}=     Call Method     ${chrome_options}    to_capabilities
 
-    Create Webdriver    Remote   command_executor=http://localhost:4444/wd/hub    desired_capabilities=${options}
+    #Create Webdriver    Remote   command_executor=http://localhost:4444/wd/hub    desired_capabilities=${options}
     Open Browser  about:blank  ${BROWSER}   desired_capabilities=${options}
     #Open Browser  about:blank  chrome
     Maximize Browser Window
