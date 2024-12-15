@@ -2,7 +2,7 @@
 Library  SeleniumLibrary
 
 *** Variables ***
-${BROWSER} =    chrome
+${BROWSER} =    headlesschrome
 ${START_URL} =  https://qa-challenge.ensolvers.com/login
 
 *** Keywords ***
@@ -18,7 +18,7 @@ Begin Web Test 0
      Maximize Browser Window
 
 Begin Web Test
-    Open Browser  about:blank  chrome
+    Open Browser  about:blank  ${BROWSER} 
     Maximize Browser Window
 
 
