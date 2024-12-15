@@ -22,7 +22,6 @@ Ensolvers QA website
 User access to the QA Challenge website
     LoginPage.Verify Website loaded
     
-
 Then result is 
     LoginPage.Verify login form loaded
 
