@@ -36,7 +36,7 @@ Create WebDriver With Chrome Options
     Log     ${chrome_options}
     Create WebDriver    Chrome      options=${chrome_options}  
     Go to    ${START_URL}
-    Wait Until Page Contains    ${WELCOME_TITLE}
+    Wait Until Page Contains    ${MAIN_TITLE}
     Capture Page Screenshot
 
 
