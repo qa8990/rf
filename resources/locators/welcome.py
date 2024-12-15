@@ -7,7 +7,6 @@ LOGGED_INFO = 'You are logged in as "user".'
 MANAGE_TODO_ITEMS = "  Manage To-Do Items"
 MANAGE_FOLDERS = "  Manage Folders"
 
-<img src="content/images/ensolvers-white.png" alt="Logo">
 # Locators
 main_link = '//a[@href="/"]'
 Click_Link1 = '(//a[@href="/"])[2]'
