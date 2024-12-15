@@ -34,7 +34,7 @@ Create WebDriver With Chrome Options
     Call Method    ${chrome_options}    add_argument    --disable-security-features
     Log     ${chrome_options}
     Create WebDriver    Chrome      options=${chrome_options}  
-    Go to    ${url}
+    Go to    ${START_URL}
     Wait Until Page Contains    Yaymaker: Event Planning Made Easy
     Capture Page Screenshot
 
