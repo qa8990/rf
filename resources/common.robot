@@ -1,5 +1,6 @@
 *** Settings ***
 Library  SeleniumLibrary
+Variables  ../resources/locators/welcome.py      # locators for welcome page
 
 *** Variables ***
 ${BROWSER} =    headlesschrome
@@ -35,7 +36,7 @@ Create WebDriver With Chrome Options
     Log     ${chrome_options}
     Create WebDriver    Chrome      options=${chrome_options}  
     Go to    ${START_URL}
-    Wait Until Page Contains    Yaymaker: Event Planning Made Easy
+    Wait Until Page Contains    ${WELCOME_TITLE}
     Capture Page Screenshot
 
 
