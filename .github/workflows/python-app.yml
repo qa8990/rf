@@ -47,4 +47,4 @@ jobs:
 
     - name: Test with robotframework
       run: |
-        robot -d tests/loginTest.robot --outputdir results
+        robot -d results/concise tests/loginTest.robot 
