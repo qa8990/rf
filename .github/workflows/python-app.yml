@@ -27,20 +27,9 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
-    - name: Install Google Chrome
-      run: |
-        sudo apt-get update
-        sudo apt-get install -y wget unzip
-        wget -q "https://storage.googleapis.com/chrome-for-testing-public/131.0.6778.108/linux64/chrome-linux64.zip"
-        unzip chrome-linux64.zip
-        rm chrome-linux64.zip
+        pip install webdrivermanager && webdrivermanager chrome --linkpath /usr/bin
+        ln -sn /usr/bin/google-chrome /usr/bin/chrome
 
-    - name: Install Compatible ChromeDriver
-      run: |
-        sudo apt-get install -y wget unzip
-        wget -q "https://storage.googleapis.com/chrome-for-testing-public/131.0.6778.108/linux64/chromedriver-linux64.zip"
-        unzip chromedriver-linux64.zip
-        rm chromedriver-linux64.zip
     - name: Test with robotframework
       run: |
         robot -d results/concise tests/loginTest.robot
