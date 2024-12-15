@@ -2,6 +2,7 @@
 Documentation  Suite for QA Ensolvers Challenge
 Library     SeleniumLibrary
 Resource  ../resources/common.robot  # necessary for Setup & Teardown
+Resource  ../resources/po/LoginPage.robot
 Variables  ../resources/locators/login.py      # locators for Login page
 
 Suite Setup     Begin Web Test
