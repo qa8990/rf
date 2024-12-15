@@ -19,8 +19,24 @@ Begin Web Test 0
     Maximize Browser Window
 
 Begin Web Test
-    Open Browser  about:blank  ${BROWSER} 
-    Maximize Browser Window
+    Create WebDriver With Chrome Options
+
+Create WebDriver With Chrome Options
+    ${chrome_options} =    Evaluate    selenium.webdriver.ChromeOptions() 
+    Call Method    ${chrome_options}    add_argument    --log-level\=3
+    Call Method    ${chrome_options}    add_argument    --start-maximized
+    Call Method    ${chrome_options}    add_argument    --window-size\=2560,1080
+    Call Method    ${chrome_options}    add_argument    --headless
+    Call Method    ${chrome_options}    add_argument    --disable-extensions
+    Call Method    ${chrome_options}    add_argument    --disable-gpu
+    Call Method    ${chrome_options}    add_argument    --disable-dev-shm-usage
+    Call Method    ${chrome_options}    add_argument    --no-sandbox
+    Call Method    ${chrome_options}    add_argument    --disable-security-features
+    Log     ${chrome_options}
+    Create WebDriver    Chrome      options=${chrome_options}  
+    Go to    ${url}
+    Wait Until Page Contains    Yaymaker: Event Planning Made Easy
+    Capture Page Screenshot
 
 
 End Web Test
